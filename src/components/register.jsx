@@ -18,6 +18,11 @@ const Register = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
+  const [values, setValues] = React.useState({
+    password: "",
+    showPassword: false,
+  });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const register = {
@@ -41,6 +46,16 @@ const Register = () => {
   } )
     
     //navigate('/')
+  }
+
+  const myFunction = (e) =>{
+    const x = document.getElementById("password");
+    console.log(x.type)
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
   }
 
   return (
@@ -97,6 +112,7 @@ const Register = () => {
               id='username'
             />
           </div>
+          
           <div className="form-group mt-3">
             <label>Password</label>
             <input
@@ -108,6 +124,9 @@ const Register = () => {
               name='password'
               id='password'
             />
+            <div className="form-group mt-3">
+            <input type="checkbox" onClick={ (e) => myFunction(e)}/> Show Password
+            </div>
           </div>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">

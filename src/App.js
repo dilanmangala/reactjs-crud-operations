@@ -8,6 +8,7 @@ import EditUser from './components/edituser';
 import Login from './components/Login';
 import AddMember from './components/addmember'
 import Register from './components/register';
+import ForgetPassword from './components/forgetpassword';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
@@ -20,8 +21,9 @@ function App() {
           <Route path="/add" element={<AddUser/>}/>
           <Route path="edit:id" element={<EditUser/>}/>
           <Route path="/add-member" element={<AddMember/>}/>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
+          <Route path="/forgetpassword" element={<ForgetPassword/>}/>
         </Routes>
       </Router>
     </div>

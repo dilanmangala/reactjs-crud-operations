@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import {Navbar, Nav, NavItem, NavbarBrand, Container} from 'reactstrap'
-import { Link } from 'react-router-dom';
+import { Link , NavLink } from 'react-router-dom';
 
 export const Heading = () => {
      
@@ -16,6 +16,13 @@ export const Heading = () => {
                 </Nav>
         
               </Container>
+              <Nav>
+              <div className="header">
+            <NavLink exact to="/">Home</NavLink>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </div>
+              </Nav>
             </Navbar>
         );
     
